@@ -8,6 +8,7 @@ public class BallRoller : MonoBehaviour {
 	private bool start;
 	Rigidbody rb;
 	private bool gameover;
+	public GameObject particle;
 	// Use this for initialization
 
 	void Awake(){
@@ -48,6 +49,16 @@ public class BallRoller : MonoBehaviour {
 		}
 		else if(rb.velocity.x > 0){
 			rb.velocity = new Vector3(0,0,speed);
+		}
+	}
+
+	void OnTriggerEnter(Collider col){
+
+		if (col.gameObject.tag == "Diamond"){
+			GameObject part = Instantiate (particle, col.gameObject.transform.position,Quaternion.identity) as GameObject;
+			Destroy (col.gameObject);
+			Destroy (part,1f);
+
 		}
 	}
 }

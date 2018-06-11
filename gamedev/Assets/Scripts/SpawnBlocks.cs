@@ -48,7 +48,7 @@ public class SpawnBlocks : MonoBehaviour {
 
 		int rand = Random.Range(0,4);
 		if (rand == 0)
-			Instantiate(diamond,new Vector3(pos.x,pos.y+1,pos.z),diamond.transform.rotate);
+			Instantiate(diamond,new Vector3(pos.x,pos.y+1,pos.z),diamond.transform.rotation);
 
 
 
@@ -63,7 +63,7 @@ public class SpawnBlocks : MonoBehaviour {
 
 		int rand = Random.Range(0,4);
 		if (rand == 0)
-			Instantiate(diamond,new Vector3(pos.x,pos.y+1,pos.z),diamond.transform.rotate);
+			Instantiate(diamond,new Vector3(pos.x,pos.y+1,pos.z),diamond.transform.rotation);
 
 	}
 }
