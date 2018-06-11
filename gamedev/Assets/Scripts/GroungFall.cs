@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class GroungFall : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -22,5 +22,7 @@ public class NewBehaviourScript : MonoBehaviour {
 
 	void Fall(){
 		GetComponentInParent<Rigidbody> ().useGravity = true;
+		GetComponentInParent<Rigidbody> ().isKinematic = false;
+		Destroy (this.transform.parent.gameObject,2f);
 	}
 }
