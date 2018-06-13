@@ -30,6 +30,7 @@ public class BallRoller : MonoBehaviour {
 				{
 					rb.velocity = new Vector3(speed,0,0);
 					start = true;
+					GameManager.instance.StartGame ();
 				}
 		}
 		if (!Physics.Raycast(transform.position,Vector3.down,1f))
@@ -37,6 +38,8 @@ public class BallRoller : MonoBehaviour {
 				gameover = true;
 				rb.velocity = new Vector3(0,-25,0);
 				Camera.main.GetComponent<CameraMover> ().gameover = true;
+
+				GameManager.instance.GameOver();
 			}
 
 		if (Input.GetMouseButtonDown(0) && !gameover)

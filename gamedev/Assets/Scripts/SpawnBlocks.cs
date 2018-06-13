@@ -8,23 +8,24 @@ public class SpawnBlocks : MonoBehaviour {
 	public GameObject diamond;
 	float size;
 	Vector3 lastpos;
-	public bool gameover;
 	// Use this for initialization
 	void Start () {
-		gameover = false;
 		lastpos = obj.transform.position;
 		size = obj.transform.localScale.x;
 
 		// for(int i = 0; i < 200; i ++)
 		// 	SpawningRandomly();
 
-		InvokeRepeating("SpawningRandomly",2.0f,0.2f);
 
+	}
+
+	public void spawnOnGameStart (){
+		InvokeRepeating("SpawningRandomly",0.5f,0.2f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (gameover){ CancelInvoke("SpawningRandomly"); }
+		if (GameManager.instance.gameover){ CancelInvoke("SpawningRandomly"); }
 		
 	}
 
