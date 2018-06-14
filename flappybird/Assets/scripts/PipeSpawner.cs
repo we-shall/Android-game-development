@@ -9,7 +9,6 @@ public class PipeSpawner : MonoBehaviour {
 	public GameObject pipe;
 	// Use this for initialization
 	void Start () {
-		startSpawning();
 	}
 	
 	// Update is called once per frame
