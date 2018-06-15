@@ -42,6 +42,7 @@ public class GameController : MonoBehaviour {
 					ballInstance.transform.LookAt(hitposition);
 
 					ballInstance.GetComponent <Rigidbody>().AddRelativeForce(Vector3.forward*ballforce,ForceMode.Impulse);
+					Invoke ("CreateBall",2f);
 				}
 			}
 
